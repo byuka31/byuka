@@ -21,6 +21,111 @@ body {
     text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4;
     opacity: 0.9;
 }
+/* ===== LIGHTBOX ===== */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox-img {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.8);
+    animation: zoom 0.3s ease;
+}
+
+.lightboxVideo {
+    max-width: 420px;
+    max-height: 420px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+@keyframes zoom {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    user-select: none;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+.nav:hover {
+    color: #ff69b4;
+}
+
+.left { left: 30px; }
+.right { right: 30px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lightbox-img {
+        max-width: 95%;
+        max-height: 80%;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    user-select: none;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+.nav:hover {
+    color: #ff69b4;
+}
+
+.left { left: 30px; }
+.right { right: 30px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lightbox-img {
+        max-width: 95%;
+        max-height: 80%;
+    }
+}
 
 .gallery {
     display: grid;
@@ -58,31 +163,44 @@ body {
 }
 
 .social-icons {
-    margin-top: 10px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.social-row {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
 }
 
-.ig-item {
+/* Item Instagram */
+.ig-item a {
     display: flex;
+    flex-direction: column;   /* icon atas, teks bawah */
     align-items: center;
-    gap: 8px;
+    gap: 6px;                 /* jarak icon & teks */
+    text-decoration: none;
 }
 
+/* Icon */
 .social-icons img {
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
     transition: transform 0.3s;
 }
 
 .social-icons img:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
 
+/* Text */
 .ig-text {
-    font-size: 14px;
+    font-size: 13px;
     color: white;
+    margin-top: 2px;
     text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4;
 }
 
